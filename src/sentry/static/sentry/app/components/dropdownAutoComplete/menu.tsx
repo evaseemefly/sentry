@@ -64,7 +64,9 @@ type Props = {
   children: (args: ChildrenArgs) => React.ReactNode;
 
   menuHeader?: React.ReactElement;
-  menuFooter?: React.ReactElement | ((props: MenuFooterChildProps) => React.ReactElement);
+  menuFooter?:
+    | React.ReactElement
+    | ((props: MenuFooterChildProps) => React.ReactElement | null);
 
   /**
    * Hide's the input when there are no items. Avoid using this when querying

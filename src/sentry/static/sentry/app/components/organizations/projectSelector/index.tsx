@@ -23,7 +23,7 @@ type ChildrenProps = {
   getActorProps: GetActorPropsFn;
   getInputProps: Function;
   isOpen: boolean;
-  selectedProjects: Project | null;
+  selectedProjects: Array<Project> | null;
 };
 
 type MenuFooterProps = {
@@ -165,7 +165,6 @@ const ProjectSelector = ({
 
   return (
     <DropdownAutoComplete
-      alignMenu="left"
       blendCorner={false}
       searchPlaceholder={t('Filter projects')}
       onSelect={handleSelect}
@@ -174,7 +173,6 @@ const ProjectSelector = ({
       busyItemsStillVisible={searching}
       onScroll={onScroll}
       maxHeight={500}
-      zIndex={theme.zIndex.dropdown}
       inputProps={{style: {padding: 8, paddingLeft: 10}}}
       rootClassName={rootClassName}
       className={className}
